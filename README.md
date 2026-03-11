@@ -1,4 +1,3 @@
-cat > ~/projects/portaldot/playground/README.md << 'EOF'
 # ⬡ Portaldot Developer Playground
 
 A developer toolkit and demo dApp for the [Portaldot](https://www.portaldot.io) ecosystem — a next-generation Layer-0 blockchain built on Substrate.
