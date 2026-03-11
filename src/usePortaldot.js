@@ -90,7 +90,7 @@ export function usePortaldot(networkKey = 'local') {
     try {
       const extensions = await web3Enable('Portaldot Playground')
       if (extensions.length === 0) throw new Error('No wallet extension found. Please install Polkadot.js extension.')
-      const accounts = await web3Accounts()
+      const accounts = await web3Accounts({ extensions: ['polkadot-js'] })
       if (accounts.length === 0) throw new Error('No accounts found. Please create an account in your wallet.')
       const address = accounts[0].address
       let balance = '0'
