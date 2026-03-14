@@ -1,3 +1,4 @@
+import { NodeRunner } from "./NodeRunner"
 import { useState, useEffect, useCallback, useRef } from "react";
 
 // ─── PORTALDOT NETWORK CONFIG ───────────────────────────────────────────────
@@ -827,6 +828,7 @@ export default function App({ usePortaldot }) {
     { id: "faucet", label: "🚰 Faucet" },
     { id: "playground", label: "⚙️ Playground" },
     { id: "messageboard", label: "💬 Message Board" },
+    { id: "noderunner", label: "⚡ Node Runner" },
   ];
 
   const nodeStatus = realChain?.isConnecting ? "connecting" : realChain?.isConnected ? "connected" : "offline";
@@ -905,6 +907,7 @@ export default function App({ usePortaldot }) {
             {tab === "faucet" && <Faucet addLog={addLog} />}
             {tab === "playground" && <DevPlayground addLog={addLog} realChain={realChain} />}
             {tab === "messageboard" && <MessageBoard wallet={demoWallet} realChain={realChain} addLog={addLog} />}
+            {tab === "noderunner" && <NodeRunner wallet={wallet} isConnected={realChain?.isConnected} />}
           </div>
         </div>
 
